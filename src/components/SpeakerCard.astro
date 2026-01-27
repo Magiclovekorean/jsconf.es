@@ -8,6 +8,7 @@ export interface Props {
   description: string
   imageUrl: string
   social?: string
+  socialType?: string 
 }
 
 const {
@@ -17,6 +18,7 @@ const {
   description,
   imageUrl,
   social,
+  socialType,
 } = Astro.props
 ---
 
@@ -45,6 +47,8 @@ const {
           target="_blank" 
           rel="noopener noreferrer" 
           class="text-white text-lg hover:text-js-yellow transition-colors"
+          title={socialType}
+          aria-label={socialType}
         >
           {social.includes('twitter') || social.includes('x.com') ? (
             <svg class="w-5 h-5" fill="none" viewBox="0 0 1200 1227">
